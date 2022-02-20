@@ -21,3 +21,24 @@ Input / Constraints
 Output
 •	Print the appropriate message in case of the "Strike" command if necessary.
 •	In the end, print the sequence of targets in the format described above.
+Input
+52 74 23 44 96 110
+Shoot 5 10
+Shoot 1 80
+Strike 2 1
+Add 22 3
+End
+
+Output
+Invalid placement!
+52|100
+
+Comments
+The first command is "Shoot", so we reduce the target on index 5, which is valid, with the given power – 10. 
+Then we receive the same command, but we need to reduce the target on the 1st index, with power 80. The value of this target is 74, so it is considered shot, and we remove it. 
+Then we receive the "Strike" command on the 2nd index, and we need to check if the range with radius 1 is valid:
+52 23 44 96 100
+And it is, so we remove the targets. 
+At last, we receive the "Add" command, but the index is invalid, so we print the appropriate message, and in the end, we have the following result:
+52|100
+
